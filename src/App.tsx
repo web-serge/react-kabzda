@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Accordion} from './components/Accordion';
+import {Title} from './components/Title';
+import {Rating} from './components/Rating';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <div className="App">
+            <Title title={'Learn react'} />
+            <Rating num={1}/>
+            <Rating num={2}/>
+            <Rating num={3}/>
+            <Rating num={4}/>
+            <Rating num={5}/>
+            <Accordion title={'Accordion'} collapsed={false}/>
+            <Accordion title={'Accordion 2'} collapsed={true}/>
+        </div>
+    );
 }
 
 export default App;
