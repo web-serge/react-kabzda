@@ -8,8 +8,7 @@
     text-align: left;
 }
 
-span {
-    font-size: 40px;
-    color: crimson;
+span:hover {
+    transform: scale(1.1);
 }
 

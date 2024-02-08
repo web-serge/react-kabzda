@@ -2,18 +2,25 @@ import React, {useState} from 'react';
 
 type AccordionPropsType = {
     title: string
-    shrink: boolean
 }
-export function Accordion(props: AccordionPropsType) {
+
+const ButtonStyle = {
+    padding: '5px 10px',
+    background: 'silver',
+    cursor: 'pointer',
+    borderRadius: '10px',
+    margin: '10px',
+    display: 'inline-block'
+}
+export function UncontrolledAccordion(props: AccordionPropsType) {
     console.log('Accordion')
-    let [shrink, setShrink] = useState(props.shrink || false)
+    let [shrink, setShrink] = useState<boolean>(false)
     function toggleCollapsed() {
         setShrink(!shrink)
     }
     return (
         <div style={{background:'rgba(0,0,0, 50%)'}}>
-            <h3>{props.title}</h3>
-            <button onClick={toggleCollapsed}>open/close</button>
+            <h3 style={ButtonStyle} onClick={toggleCollapsed}>{props.title}</h3>
             {shrink &&  <AccordionBody />}
         </div>
     )
